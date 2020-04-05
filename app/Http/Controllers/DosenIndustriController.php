@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Exports\DosenIndustriExport;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Http\Controllers\Controller;
 
 class DosenIndustriController extends Controller
 {
@@ -26,6 +29,16 @@ class DosenIndustriController extends Controller
             $res['message'] = "Empty!";
             return response($res);
         }
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function export_excel()
+    {
+        return Excel::download(new DosenIndustriExport, 'dosen_industri.xlsx');
     }
 
     /**
