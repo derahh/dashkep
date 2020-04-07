@@ -32,13 +32,13 @@ class DosenIndustriController extends Controller
     }
 
     /**
-     * Display a listing of the resource.
+     * export to excel a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function export_excel()
     {
-        return Excel::download(new DosenIndustriExport, 'dosen_industri.xlsx');
+        return Excel::download(new DosenIndustriExport, 'Dosen Industri.xlsx');
     }
 
     /**
