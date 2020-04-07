@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Exports\EWMPDosenExport;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Http\Controllers\Controller;
 
 class EWMPDosenController extends Controller
 {
@@ -26,6 +29,16 @@ class EWMPDosenController extends Controller
             $res['message'] = "Empty!";
             return response($res);
         }
+    }
+
+    /**
+     * export to excel a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function export_excel()
+    {
+        return Excel::download(new EWMPDosenExport, 'EWMP Dosen.xlsx');
     }
 
     /**
