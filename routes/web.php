@@ -35,6 +35,6 @@ Route::get('/rekognisi_dosen/export','RekognisiDosenController@export_excel');
 Route::get('/dosen_tetap','DosenTetapController@index');
 Route::get('/dosen_tidak_tetap','DosenTidakTetapController@index');
 Route::get('/dosen_pembimbing','DosenPembimbingController@index');
-Route::get('/dosen_industri/store','DosenIndustriController@store');
+Route::post('/dosen_industri/store','DosenIndustriController@store');
 Route::get('/ewmp_dosen','EWMPDosenController@index');
 Route::get('/rekognisi_dosen','RekognisiDosenController@index');
