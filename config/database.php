@@ -42,6 +42,7 @@ return [
         'mysql' => [
             'driver' => 'mysql',
             'host' => env('DB_HOST', 'db4free.net'),
+            'options' => [PDO::ATTR_EMULATE_PREPARES => true,],
             'port' => env('DB_PORT', '3306'),
             'database' => env('DB_DATABASE', 'dashkep'),
             'username' => env('DB_USERNAME', 'zehiro'),
