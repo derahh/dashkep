@@ -32,9 +32,9 @@ Route::get('/ewmp_dosen/export','EWMPDosenController@export_excel');
 Route::get('/rekognisi_dosen/export','RekognisiDosenController@export_excel');
 
 //method create
-Route::post('/dosen_tetap/store','DosenTetapController@store');
-Route::get('/dosen_tidak_tetap','DosenTidakTetapController@index');
+Route::post('/dosen_tetap/create','DosenTetapController@store');
+Route::post('/dosen_tidak_tetap/create','DosenTidakTetapController@store');
 Route::get('/dosen_pembimbing','DosenPembimbingController@index');
-Route::post('/dosen_industri/store','DosenIndustriController@store');
+Route::post('/dosen_industri/create','DosenIndustriController@store');
 Route::get('/ewmp_dosen','EWMPDosenController@index');
 Route::get('/rekognisi_dosen','RekognisiDosenController@index');
