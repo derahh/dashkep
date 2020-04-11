@@ -59,7 +59,32 @@ class DosenPembimbingController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $nama_dosen = $request->input('nama_dosen');
+        $nidn = $request->input('nidn');
+        $akreditasi_ts_2 = $request->input('akreditasi_ts_2');
+        $akreditasi_ts_1 = $request->input('akreditasi_ts_1');
+        $akreditasi_ts = $request->input('akreditasi_ts');
+        $pslain_ts_1 = $request->input('pslain_ts_1');
+        $pslain_ts = $request->input('pslain_ts');
+        $jumlah_bimbingan = $request->input('jumlah_bimbingan');
+        $jumlah_bimbingan_program = $request->input('jumlah_bimbingan_program');
+    
+        $data = new \App\DosenPembimbingModel();
+        $data->nama_dosen = $nama_dosen;
+        $data->nidn = $nidn;
+        $data->akreditasi_ts_2 = $akreditasi_ts_2;
+        $data->akreditasi_ts_1 = $akreditasi_ts_1;
+        $data->akreditasi_ts = $akreditasi_ts;
+        $data->pslain_ts_1 = $pslain_ts_1;
+        $data->pslain_ts_1 = $pslain_ts_1;
+        $data->jumlah_bimbingan = $jumlah_bimbingan;
+        $data->jumlah_bimbingan_program = $jumlah_bimbingan_program;
+    
+        if($data->save()){
+            $res['message'] = "Success!";
+            $res['value'] = "$data";
+            return response($res);
+        }
     }
 
     /**
