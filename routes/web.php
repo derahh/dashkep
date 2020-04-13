@@ -37,4 +37,4 @@ Route::post('/dosen_tidak_tetap/create','DosenTidakTetapController@store');
 Route::post('/dosen_pembimbing/create','DosenPembimbingController@store');
 Route::post('/dosen_industri/create','DosenIndustriController@store');
 Route::post('/ewmp_dosen/create','EWMPDosenController@store');
-Route::get('/rekognisi_dosen','RekognisiDosenController@index');
+Route::post('/rekognisi_dosen/create','RekognisiDosenController@store');

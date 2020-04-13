@@ -59,7 +59,26 @@ class RekognisiDosenController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $nama_dosen = $request->input('nama_dosen');
+        $bidang_keahlian = $request->input('bidang_keahlian');
+        $tingkat_wilayah = $request->input('tingkat_wilayah');
+        $tingkat_nasional = $request->input('tingkat_nasional');
+        $tingkat_internasional = $request->input('tingkat_internasional');
+        $tahun = $request->input('tahun');
+    
+        $data = new \App\RekognisiDosenModel();
+        $data->nama_dosen = $nama_dosen;
+        $data->bidang_keahlian = $bidang_keahlian;
+        $data->tingkat_wilayah = $tingkat_wilayah;
+        $data->tingkat_nasional = $tingkat_nasional;
+        $data->tingkat_internasional = $tingkat_internasional;
+        $data->tahun = $tahun;
+    
+        if($data->save()){
+            $res['message'] = "Success!";
+            $res['value'] = "$data";
+            return response($res);
+        }
     }
 
     /**
