@@ -126,6 +126,16 @@ class DosenTidakTetapController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data = \App\DosenTidakTetapModel::where('id',$id)->first();
+    
+        if($data->delete()){
+            $res['message'] = "Success!";
+            $res['value'] = "$data";
+            return response($res);
+        }
+        else{
+            $res['message'] = "Failed!";
+            return response($res);
+        }
     }
 }
