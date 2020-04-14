@@ -43,6 +43,6 @@ Route::post('/rekognisi_dosen/create','RekognisiDosenController@store');
 Route::post('/dosen_tetap/delete/{id}','DosenTetapController@destroy');
 Route::post('/dosen_tidak_tetap/delete/{id}','DosenTidakTetapController@destroy');
 Route::post('/dosen_pembimbing/delete/{id}','DosenPembimbingController@destroy');
-Route::post('/dosen_industri/create','DosenIndustriController@store');
+Route::post('/dosen_industri/delete/{id}','DosenIndustriController@destroy');
 Route::post('/ewmp_dosen/create','EWMPDosenController@store');
 Route::post('/rekognisi_dosen/create','RekognisiDosenController@store');
