@@ -122,7 +122,36 @@ class DosenTetapController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $nama_dosen = $request->input('nama_dosen');
+        $nidn = $request->input('nidn');
+        $pendidikan_pasca_sarjana = $request->input('pendidikan_pasca_sarjana');
+        $bidang_keahlian = $request->input('bidang_keahlian');
+        $kompetensi_inti_ps = $request->input('kompetensi_inti_ps');
+        $jabatan_akademik = $request->input('jabatan_akademik');
+        $sertifikat_pendidik_profesional = $request->input('sertifikat_pendidik_profesional');
+        $sertifikat_kompetensi = $request->input('sertifikat_kompetensi');
+        $mata_kuliah = $request->input('mata_kuliah');
+        $bidang_keahlian_mata_kuliah = $request->input('bidang_keahlian_mata_kuliah');
+        $mata_kuliah_ps_lain = $request->input('mata_kuliah_ps_lain');
+    
+        $data = \App\DosenTetapModel::where('id',$id)->first();
+        $data->nama_dosen = $nama_dosen;
+        $data->nidn = $nidn;
+        $data->pendidikan_pasca_sarjana = $pendidikan_pasca_sarjana;
+        $data->bidang_keahlian = $bidang_keahlian;
+        $data->kompetensi_inti_ps = $kompetensi_inti_ps;
+        $data->jabatan_akademik = $jabatan_akademik;
+        $data->sertifikat_pendidik_profesional = $sertifikat_pendidik_profesional;
+        $data->sertifikat_kompetensi = $sertifikat_kompetensi;
+        $data->mata_kuliah = $mata_kuliah;
+        $data->bidang_keahlian_mata_kuliah = $bidang_keahlian_mata_kuliah;
+        $data->mata_kuliah_ps_lain = $mata_kuliah_ps_lain;
+    
+        if($data->save()){
+            $res['message'] = "Success!";
+            $res['value'] = "$data";
+            return response($res);
+        }
     }
 
     /**
