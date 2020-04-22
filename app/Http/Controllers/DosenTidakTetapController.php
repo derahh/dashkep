@@ -115,7 +115,30 @@ class DosenTidakTetapController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $nama_dosen = $request->input('nama_dosen');
+        $nidn = $request->input('nidn');
+        $pendidikan_pasca_sarjana = $request->input('pendidikan_pasca_sarjana');
+        $bidang_keahlian = $request->input('bidang_keahlian');
+        $jabatan_akademik = $request->input('jabatan_akademik');
+        $sertifikat_pendidik_profesional = $request->input('sertifikat_pendidik_profesional');
+        $mata_kuliah = $request->input('mata_kuliah');
+        $bidang_keahlian_mata_kuliah = $request->input('bidang_keahlian_mata_kuliah');
+    
+        $data = \App\DosenTidakTetapModel::where('id',$id)->first();
+        $data->nama_dosen = $nama_dosen;
+        $data->nidn = $nidn;
+        $data->pendidikan_pasca_sarjana = $pendidikan_pasca_sarjana;
+        $data->bidang_keahlian = $bidang_keahlian;
+        $data->jabatan_akademik = $jabatan_akademik;
+        $data->sertifikat_pendidik_profesional = $sertifikat_pendidik_profesional;
+        $data->mata_kuliah = $mata_kuliah;
+        $data->bidang_keahlian_mata_kuliah = $bidang_keahlian_mata_kuliah;
+    
+        if($data->save()){
+            $res['message'] = "Success!";
+            $res['value'] = "$data";
+            return response($res);
+        }
     }
 
     /**
