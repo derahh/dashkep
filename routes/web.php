@@ -49,7 +49,7 @@ Route::post('/rekognisi_dosen/delete/{id}','RekognisiDosenController@destroy');
 
 //method update
 Route::post('/dosen_tetap/update/{id}','DosenTetapController@update');
-Route::post('/dosen_tidak_tetap/delete/{id}','DosenTidakTetapController@destroy');
+Route::post('/dosen_tidak_tetap/update/{id}','DosenTidakTetapController@update');
 Route::post('/dosen_pembimbing/delete/{id}','DosenPembimbingController@destroy');
 Route::post('/dosen_industri/delete/{id}','DosenIndustriController@destroy');
 Route::post('/ewmp_dosen/delete/{id}','EWMPDosenController@destroy');
