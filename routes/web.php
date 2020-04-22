@@ -52,5 +52,5 @@ Route::post('/dosen_tetap/update/{id}','DosenTetapController@update');
 Route::post('/dosen_tidak_tetap/update/{id}','DosenTidakTetapController@update');
 Route::post('/dosen_pembimbing/update/{id}','DosenPembimbingController@update');
 Route::post('/dosen_industri/update/{id}','DosenIndustriController@update');
-Route::post('/ewmp_dosen/delete/{id}','EWMPDosenController@destroy');
+Route::post('/ewmp_dosen/update/{id}','EWMPDosenController@update');
 Route::post('/rekognisi_dosen/delete/{id}','RekognisiDosenController@destroy');

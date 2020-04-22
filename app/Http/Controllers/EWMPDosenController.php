@@ -120,7 +120,34 @@ class EWMPDosenController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $nama_dosen = $request->input('nama_dosen');
+        $dtps = $request->input('dtps');
+        $ps_akreditasi = $request->input('ps_akreditasi');
+        $pslain_dalam_pt = $request->input('pslain_dalam_pt');
+        $pslain_luar_pt = $request->input('pslain_luar_pt');
+        $penelitian = $request->input('penelitian');
+        $pkm = $request->input('pkm');
+        $tugas_tambahan = $request->input('tugas_tambahan');
+        $jumlah_sks = $request->input('jumlah_sks');
+        $sks_per_semester = $request->input('sks_per_semester');
+    
+        $data = \App\EWMPDosenModel::where('id',$id)->first();
+        $data->nama_dosen = $nama_dosen;
+        $data->dtps = $dtps;
+        $data->ps_akreditasi = $ps_akreditasi;
+        $data->pslain_dalam_pt = $pslain_dalam_pt;
+        $data->pslain_luar_pt = $pslain_luar_pt;
+        $data->penelitian = $penelitian;
+        $data->pkm = $pkm;
+        $data->tugas_tambahan = $tugas_tambahan;
+        $data->jumlah_sks = $jumlah_sks;
+        $data->sks_per_semester = $sks_per_semester;
+    
+        if($data->save()){
+            $res['message'] = "Success!";
+            $res['value'] = "$data";
+            return response($res);
+        }
     }
 
     /**
