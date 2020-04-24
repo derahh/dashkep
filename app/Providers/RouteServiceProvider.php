@@ -94,18 +94,18 @@ class RouteServiceProvider extends ServiceProvider
              Route::apiResource('/dosen_industri/create','DosenIndustriController@store');
              Route::apiResource('/ewmp_dosen/create','EWMPDosenController@store');
              Route::apiResource('/rekognisi_dosen/create','RekognisiDosenController@store');
-             Route::apiResource('/dosen_tetap/delete/{id}','DosenTetapController@destroy');
-             Route::apiResource('/dosen_tidak_tetap/delete/{id}','DosenTidakTetapController@destroy');
-             Route::apiResource('/dosen_pembimbing/delete/{id}','DosenPembimbingController@destroy');
-             Route::apiResource('/dosen_industri/delete/{id}','DosenIndustriController@destroy');
-             Route::apiResource('/ewmp_dosen/delete/{id}','EWMPDosenController@destroy');
-             Route::apiResource('/rekognisi_dosen/delete/{id}','RekognisiDosenController@destroy');
-             Route::apiResource('/dosen_tetap/update/{id}','DosenTetapController@update');
-             Route::apiResource('/dosen_tidak_tetap/update/{id}','DosenTidakTetapController@update');
-             Route::apiResource('/dosen_pembimbing/update/{id}','DosenPembimbingController@update');
-             Route::apiResource('/dosen_industri/update/{id}','DosenIndustriController@update');
-             Route::apiResource('/ewmp_dosen/update/{id}','EWMPDosenController@update');
-             Route::apiResource('/rekognisi_dosen/update/{id}','RekognisiDosenController@update');
+             Route::apiResource('/dosen_tetap/delete','DosenTetapController@destroy');
+             Route::apiResource('/dosen_tidak_tetap/delete','DosenTidakTetapController@destroy');
+             Route::apiResource('/dosen_pembimbing/delete','DosenPembimbingController@destroy');
+             Route::apiResource('/dosen_industri/delete','DosenIndustriController@destroy');
+             Route::apiResource('/ewmp_dosen/delete','EWMPDosenController@destroy');
+             Route::apiResource('/rekognisi_dosen/delete','RekognisiDosenController@destroy');
+             Route::apiResource('/dosen_tetap/update','DosenTetapController@update');
+             Route::apiResource('/dosen_tidak_tetap/update','DosenTidakTetapController@update');
+             Route::apiResource('/dosen_pembimbing/update','DosenPembimbingController@update');
+             Route::apiResource('/dosen_industri/update','DosenIndustriController@update');
+             Route::apiResource('/ewmp_dosen/update','EWMPDosenController@update');
+             Route::apiResource('/rekognisi_dosen/update','RekognisiDosenController@update');
         });     
     }
 }
