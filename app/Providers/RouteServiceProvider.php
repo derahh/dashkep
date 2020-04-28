@@ -65,10 +65,10 @@ class RouteServiceProvider extends ServiceProvider
      */
     protected function mapApiRoutes()
     {
-        Route::prefix('api')
-             ->middleware('api')
-             ->namespace($this->namespace)
-             ->group(base_path('routes/api.php'));
+        // Route::prefix('api')
+        //      ->middleware('api')
+        //      ->namespace($this->namespace)
+        //      ->group(base_path('routes/api.php'));
 
         // Route::group([
         //     'middleware' => ['api', 'cors'],
@@ -108,12 +108,12 @@ class RouteServiceProvider extends ServiceProvider
         //      Route::apiResource('/rekognisi_dosen/update','RekognisiDosenController@update');
         // });   
         
-        // Route::group([
-        //     'middleware' => ['api', 'cors'],
-        //     'namespace' => $this->namespace,
-        //     'prefix' => 'api',
-        // ], function ($router) {
-        //     require base_path('routes/api.php');
-        // });
+        Route::group([
+            'middleware' => ['api', 'cors'],
+            'namespace' => $this->namespace,
+            'prefix' => 'api',
+        ], function ($router) {
+            require base_path('routes/api.php');
+        });
     }
 }
