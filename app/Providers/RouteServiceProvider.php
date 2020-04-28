@@ -70,42 +70,50 @@ class RouteServiceProvider extends ServiceProvider
         //      ->namespace($this->namespace)
         //      ->group(base_path('routes/api.php'));
 
+        // Route::group([
+        //     'middleware' => ['api', 'cors'],
+        //     'namespace' => $this->namespace,
+        //     'prefix' => 'api',
+        // ], function ($router) {
+        //      //Add you routes here, for example:
+        //      Route::apiResource('/dosen_tetap','DosenTetapController@index');
+        //      Route::apiResource('/dosen_tidak_tetap','DosenTidakTetapController@index');
+        //      Route::apiResource('/dosen_pembimbing','DosenPembimbingController@index');
+        //      Route::apiResource('/dosen_industri','DosenIndustriController@index');
+        //      Route::apiResource('/ewmp_dosen','EWMPDosenController@index');
+        //      Route::apiResource('/rekognisi_dosen','RekognisiDosenController@index');
+        //      Route::apiResource('/dosen_tetap/export','DosenTetapController@export_excel');
+        //      Route::apiResource('/dosen_tidak_tetap/export','DosenTidakTetapController@export_excel');
+        //      Route::apiResource('/dosen_pembimbing/export','DosenPembimbingController@export_excel');
+        //      Route::apiResource('/dosen_industri/export','DosenIndustriController@export_excel');
+        //      Route::apiResource('/ewmp_dosen/export','EWMPDosenController@export_excel');
+        //      Route::apiResource('/rekognisi_dosen/export','RekognisiDosenController@export_excel');
+        //      Route::apiResource('/dosen_tetap/create','DosenTetapController@store');
+        //      Route::apiResource('/dosen_tidak_tetap/create','DosenTidakTetapController@store');
+        //      Route::apiResource('/dosen_pembimbing/create','DosenPembimbingController@store');
+        //      Route::apiResource('/dosen_industri/create','DosenIndustriController@store');
+        //      Route::apiResource('/ewmp_dosen/create','EWMPDosenController@store');
+        //      Route::apiResource('/rekognisi_dosen/create','RekognisiDosenController@store');
+        //      Route::apiResource('/dosen_tetap/delete','DosenTetapController@destroy');
+        //      Route::apiResource('/dosen_tidak_tetap/delete','DosenTidakTetapController@destroy');
+        //      Route::apiResource('/dosen_pembimbing/delete','DosenPembimbingController@destroy');
+        //      Route::apiResource('/dosen_industri/delete','DosenIndustriController@destroy');
+        //      Route::apiResource('/ewmp_dosen/delete','EWMPDosenController@destroy');
+        //      Route::apiResource('/rekognisi_dosen/delete','RekognisiDosenController@destroy');
+        //      Route::apiResource('/dosen_tetap/update','DosenTetapController@update');
+        //      Route::apiResource('/dosen_tidak_tetap/update','DosenTidakTetapController@update');
+        //      Route::apiResource('/dosen_pembimbing/update','DosenPembimbingController@update');
+        //      Route::apiResource('/dosen_industri/update','DosenIndustriController@update');
+        //      Route::apiResource('/ewmp_dosen/update','EWMPDosenController@update');
+        //      Route::apiResource('/rekognisi_dosen/update','RekognisiDosenController@update');
+        // });   
+        
         Route::group([
             'middleware' => ['api', 'cors'],
             'namespace' => $this->namespace,
             'prefix' => 'api',
         ], function ($router) {
-             //Add you routes here, for example:
-             Route::apiResource('/dosen_tetap','DosenTetapController@index');
-             Route::apiResource('/dosen_tidak_tetap','DosenTidakTetapController@index');
-             Route::apiResource('/dosen_pembimbing','DosenPembimbingController@index');
-             Route::apiResource('/dosen_industri','DosenIndustriController@index');
-             Route::apiResource('/ewmp_dosen','EWMPDosenController@index');
-             Route::apiResource('/rekognisi_dosen','RekognisiDosenController@index');
-             Route::apiResource('/dosen_tetap/export','DosenTetapController@export_excel');
-             Route::apiResource('/dosen_tidak_tetap/export','DosenTidakTetapController@export_excel');
-             Route::apiResource('/dosen_pembimbing/export','DosenPembimbingController@export_excel');
-             Route::apiResource('/dosen_industri/export','DosenIndustriController@export_excel');
-             Route::apiResource('/ewmp_dosen/export','EWMPDosenController@export_excel');
-             Route::apiResource('/rekognisi_dosen/export','RekognisiDosenController@export_excel');
-             Route::apiResource('/dosen_tetap/create','DosenTetapController@store');
-             Route::apiResource('/dosen_tidak_tetap/create','DosenTidakTetapController@store');
-             Route::apiResource('/dosen_pembimbing/create','DosenPembimbingController@store');
-             Route::apiResource('/dosen_industri/create','DosenIndustriController@store');
-             Route::apiResource('/ewmp_dosen/create','EWMPDosenController@store');
-             Route::apiResource('/rekognisi_dosen/create','RekognisiDosenController@store');
-             Route::apiResource('/dosen_tetap/delete','DosenTetapController@destroy');
-             Route::apiResource('/dosen_tidak_tetap/delete','DosenTidakTetapController@destroy');
-             Route::apiResource('/dosen_pembimbing/delete','DosenPembimbingController@destroy');
-             Route::apiResource('/dosen_industri/delete','DosenIndustriController@destroy');
-             Route::apiResource('/ewmp_dosen/delete','EWMPDosenController@destroy');
-             Route::apiResource('/rekognisi_dosen/delete','RekognisiDosenController@destroy');
-             Route::apiResource('/dosen_tetap/update','DosenTetapController@update');
-             Route::apiResource('/dosen_tidak_tetap/update','DosenTidakTetapController@update');
-             Route::apiResource('/dosen_pembimbing/update','DosenPembimbingController@update');
-             Route::apiResource('/dosen_industri/update','DosenIndustriController@update');
-             Route::apiResource('/ewmp_dosen/update','EWMPDosenController@update');
-             Route::apiResource('/rekognisi_dosen/update','RekognisiDosenController@update');
-        });     
+            require base_path('routes/api.php');
+        });
     }
 }
